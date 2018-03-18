@@ -4,6 +4,16 @@
 const initialCardList = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
 const gameDifficulty = 2;
 
+//Multiply initial list
+
+function multiplyList(initialArray, counter) {
+  let multipliedArray = [];
+  while (counter +1 > 0) {
+    multipliedArray.push(...initialArray);
+    counter -= 1;
+  }
+  return multipliedArray;
+}
 
 /*
  * set up the event listener for a card. If a card is clicked:
