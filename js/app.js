@@ -15,6 +15,23 @@ function multiplyList(initialArray, counter) {
   return multipliedArray;
 }
 
+//Loop through each card and create its HTML
+//Add each card's HTML to the page
+
+function createCards(gameCardList) {
+  const gameDeck = document.querySelector('.deck');
+  gameDeck.innerHTML = [];
+  for (let i = 0; i < gameCardList.length; i++) {
+    const newCard = document.createElement('li');
+    newCard.classList.add('card');
+    const icon = document.createElement('i');
+    icon.classList.add('fa', gameCardList[i]);
+    newCard.appendChild(icon);
+    gameDeck.appendChild(newCard);
+  }
+  document.body.appendChild(gameDeck);
+}
+
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
